@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:manage_sport/delayed_animation.dart';
+import 'package:manage_sport/home_page.dart';
 import 'package:manage_sport/main.dart';
 
 class LoginPage extends StatelessWidget {
@@ -35,7 +36,7 @@ class LoginPage extends StatelessWidget {
                   DelayedAnimation(
                     delay: 1500,
                     child: Text(
-                      "Connect email address",
+                      "Connexion avec adresse email",
                       style: GoogleFonts.poppins(
                         color: d_red,
                         fontSize: 25,
@@ -47,7 +48,7 @@ class LoginPage extends StatelessWidget {
                   DelayedAnimation(
                     delay: 2500,
                     child: Text(
-                      "It's recommended to connect your email address for us to better protect your information.",
+                      "Il est recommandé de se conneceter avec son adresse email afin de mieux protéger vos informations.",
                       style: GoogleFonts.poppins(
                         color: Colors.grey[600],
                         fontSize: 16,
@@ -84,7 +85,7 @@ class LoginPage extends StatelessWidget {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => MyApp(),
+                      builder: (context) => HomePage(),
                     ),
                   );
                 },
@@ -127,6 +128,9 @@ class LoginForm extends StatefulWidget {
 
 class _LoginFormState extends State<LoginForm> {
   var _obscureText = true;
+  final _formKey = GlobalKey<FormState>();
+  String _email = '';
+  String _password = '';
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -137,7 +141,14 @@ class _LoginFormState extends State<LoginForm> {
         children: [
           DelayedAnimation(
             delay: 3500,
-            child: TextField(
+            child: TextFormField(
+              validator: (String? value) {
+              if(value != null && value.isEmpty) {
+                return 'Entrez une adresse électronique valide';
+              }
+              return null;
+              },
+              onSaved: (value) => _email = value!,
               decoration: InputDecoration(
                 labelText: 'Votre email',
                 labelStyle: TextStyle(

@@ -30,7 +30,7 @@ class SocialPage extends StatelessWidget {
               delay: 1500,
               child: Container(
                 height: 280,
-                child: Image.asset('images/yoga_3.png'),
+                child: Image.asset('images/fitness_man.png'),
               ),
             ),
             DelayedAnimation(
@@ -43,7 +43,7 @@ class SocialPage extends StatelessWidget {
                 child: Column(
                   children: [
                     Text(
-                      "Change starts here",
+                      "Le changement, c'est maintenant",
                       style: GoogleFonts.poppins(
                         color: d_red,
                         fontSize: 16,
@@ -52,7 +52,7 @@ class SocialPage extends StatelessWidget {
                     ),
                     SizedBox(height: 10),
                     Text(
-                      "Save your progress to access your personal training program!",
+                      "Enregistrez votre progression pour accéder à votre programme d'entrainement personnel !",
                       textAlign: TextAlign.center,
                       style: GoogleFonts.poppins(
                         color: Colors.grey,

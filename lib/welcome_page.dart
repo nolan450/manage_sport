@@ -39,7 +39,7 @@ class WelcomePage extends StatelessWidget {
                     bottom: 20,
                   ),
                   child: Text(
-                    "Get fitter, stronger, and embrasse a helthier lifestyle",
+                    "On ne perds jamais. Soit l'on gagne, soit on l'apprends.",
                     textAlign: TextAlign.center,
                     style: GoogleFonts.poppins(
                       color: Colors.grey,
@@ -57,7 +57,7 @@ class WelcomePage extends StatelessWidget {
                         primary: d_red,
                         shape: StadiumBorder(),
                         padding: EdgeInsets.all(13)),
-                    child: Text('GET STARTED'),
+                    child: Text('JE ME LANCE'),
                     onPressed: () {
                       Navigator.push(
                         context,
